@@ -74,17 +74,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-// passport.use(new FacebookStrategy({
-//     clientID: FACEBOOK_APP_ID,
-//     clientSecret: FACEBOOK_APP_SECRET,
-//     callbackURL: "http://localhost:3000/auth/facebook/callback"
-//   },
-//   function(accessToken, refreshToken, profile, cb) {
-//     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-//       return cb(err, user);
-//     });
-//   }
-// ));
+
    
 app.get("/", function(req , res){
     res.render("home");
@@ -171,7 +161,6 @@ app.post("/register", function(req, res){
     });
     
 });
-   
 
 app.post("/login", function(req, res){
     const user = new User({
@@ -190,12 +179,6 @@ app.post("/login", function(req, res){
     });
     
 });
-
-
-
-
-
-
 
 app.listen(3000, function(){
     console.log('listening on port 3000');
